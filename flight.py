@@ -52,10 +52,47 @@ variables = [
     'ae483log.m_2',
     'ae483log.m_3',
     'ae483log.m_4',
-    # Loco Positioning Measurements
-    'ae483log.loco_x',
-    'ae483log.loco_y',
-    'ae483log.loco_z'
+    # Loco positions
+    # anchor 0
+    'ae483log.x0',
+    'ae483log.y0',
+    'ae483log.z0',
+    'ae483log.d0',
+    # anchor 1
+    'ae483log.x1',
+    'ae483log.y1',
+    'ae483log.z1',
+    'ae483log.d1',
+    # anchor 2
+    'ae483log.x2',
+    'ae483log.y2',
+    'ae483log.z2',
+    'ae483log.d2',
+    # anchor 3
+    'ae483log.x3',
+    'ae483log.y3',
+    'ae483log.z3',
+    'ae483log.d3',
+    # anchor 4
+    'ae483log.x4',
+    'ae483log.y4',
+    'ae483log.z4',
+    'ae483log.d4',
+    # anchor 5
+    'ae483log.x5',
+    'ae483log.y5',
+    'ae483log.z5',
+    'ae483log.d5',
+    # anchor 6
+    'ae483log.x6',
+    'ae483log.y6',
+    'ae483log.z6',
+    'ae483log.d6',
+    # anchor 7
+    'ae483log.x7',
+    'ae483log.y7',
+    'ae483log.z7',
+    'ae483log.d7'
 ]
 
 
