@@ -92,7 +92,11 @@ variables = [
     'ae483log.x7',
     'ae483log.y7',
     'ae483log.z7',
-    'ae483log.d7'
+    'ae483log.d7',
+    # gyro
+    'gyro.x',
+    'gyro.y',
+    'gyro.z'
 ]
 
 
@@ -217,7 +221,7 @@ if __name__ == '__main__':
     cflib.crtp.init_drivers()
 
     # Create and start the client that will connect to the drone
-    client = SimpleClient(uri, use_controller=False, use_observer=False)   # <-- FIXME
+    client = SimpleClient(uri, use_controller=True, use_observer=False)   # <-- FIXME
     while not client.is_connected:
         print(f' ... connecting ...')
         time.sleep(1.0)
@@ -240,6 +244,8 @@ if __name__ == '__main__':
     client.move(0.0, 0.0, 0.50, 0.0, 6.0)
     client.move(0.0, 0.0, 0.50, 0.0, 1.0)
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    
+     
 
 
     # Move tests
@@ -258,7 +264,6 @@ if __name__ == '__main__':
     # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
 
-
     # Land
     client.stop(1.0)
 
@@ -266,4 +271,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('some_data.json')
+    client.write_data('flight_test_data.json')
