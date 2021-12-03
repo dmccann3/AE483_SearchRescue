@@ -23,15 +23,15 @@ variables = [
     'ae483log.v_y',
     'ae483log.v_z',
     # State estimates (default observer)
-    'stateEstimate.x',
-    'stateEstimate.y',
-    'stateEstimate.z',
-    'stateEstimate.yaw',
-    'stateEstimate.pitch',
-    'stateEstimate.roll',
-    'kalman.statePX',
-    'kalman.statePY',
-    'kalman.statePZ',
+    # 'stateEstimate.x',
+    # 'stateEstimate.y',
+    # 'stateEstimate.z',
+    # 'stateEstimate.yaw',
+    # 'stateEstimate.pitch',
+    # 'stateEstimate.roll',
+    # 'kalman.statePX',
+    # 'kalman.statePY',
+    # 'kalman.statePZ',
     # Measurements
     'ae483log.w_x',
     'ae483log.w_y',
@@ -44,9 +44,9 @@ variables = [
     'ae483log.o_x_des',
     'ae483log.o_y_des',
     'ae483log.o_z_des',
-    'ctrltarget.x',
-    'ctrltarget.y',
-    'ctrltarget.z',
+    # 'ctrltarget.x',
+    # 'ctrltarget.y',
+    # 'ctrltarget.z',
     # Motor power commands
     'ae483log.m_1',
     'ae483log.m_2',
@@ -54,54 +54,54 @@ variables = [
     'ae483log.m_4',
     # Loco positions
     # anchor 0
-    'ae483log.x0',
-    'ae483log.y0',
-    'ae483log.z0',
+    # 'ae483log.x0',
+    # 'ae483log.y0',
+    # 'ae483log.z0',
     'ae483log.d0',
     # anchor 1
-    'ae483log.x1',
-    'ae483log.y1',
-    'ae483log.z1',
+    # 'ae483log.x1',
+    # 'ae483log.y1',
+    # 'ae483log.z1',
     'ae483log.d1',
     # anchor 2
-    'ae483log.x2',
-    'ae483log.y2',
-    'ae483log.z2',
+    # 'ae483log.x2',
+    # 'ae483log.y2',
+    # 'ae483log.z2',
     'ae483log.d2',
     # anchor 3
-    'ae483log.x3',
-    'ae483log.y3',
-    'ae483log.z3',
+    # 'ae483log.x3',
+    # 'ae483log.y3',
+    # 'ae483log.z3',
     'ae483log.d3',
     # anchor 4
-    'ae483log.x4',
-    'ae483log.y4',
-    'ae483log.z4',
+    # 'ae483log.x4',
+    # 'ae483log.y4',
+    # 'ae483log.z4',
     'ae483log.d4',
     # anchor 5
-    'ae483log.x5',
-    'ae483log.y5',
-    'ae483log.z5',
+    # 'ae483log.x5',
+    # 'ae483log.y5',
+    # 'ae483log.z5',
     'ae483log.d5',
     # anchor 6
-    'ae483log.x6',
-    'ae483log.y6',
-    'ae483log.z6',
+    # 'ae483log.x6',
+    # 'ae483log.y6',
+    # 'ae483log.z6',
     'ae483log.d6',
     # anchor 7
-    'ae483log.x7',
-    'ae483log.y7',
-    'ae483log.z7',
+    # 'ae483log.x7',
+    # 'ae483log.y7',
+    # 'ae483log.z7',
     'ae483log.d7',
     # gyro
-    'gyro.x',
-    'gyro.y',
-    'gyro.z'
+    # 'gyro.x',
+    # 'gyro.y',
+    # 'gyro.z'
 ]
 
 
 class SimpleClient:
-    def __init__(self, uri, use_controller=False, use_observer=False):
+    def __init__(self, uri, use_controller=True, use_observer=False):
         self.init_time = time.time()
         self.use_controller = use_controller
         self.use_observer = use_observer
@@ -239,9 +239,25 @@ if __name__ == '__main__':
 
 
     # # Hover tests
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 6.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+
+
+
+    # Take off and hover (with zero yaw)
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.50, 0.0, 6.0)
+
+    # Fly in a square
+    client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 3.0)
+    client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 3.0)
+    client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 3.0)
+    client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 3.0)
+
+    # Go back to hover (with zero yaw) and prepare to land
     client.move(0.0, 0.0, 0.50, 0.0, 1.0)
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     
