@@ -279,10 +279,21 @@ if __name__ == '__main__':
     # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
 
+    # takeoff sequence
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     client.move(0.0, 0.0, 0.50, 0.0, 1.0)
 
-    client.move_smooth([0.0, 0.0, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
+    # movement sequence
+    client.move_smooth([0.0, 0.0, 0.5], [1.0, 1.0, 0.5], 0.0, 5.0)
+    client.move(1.0, 1.0, 0.10, 0.0, 2.0)
+    client.move(1.0, 1.0, 0.10, 0.0, 10.0)
+    client.move(1.0, 1.0, 0.50, 0.0, 2.0)
+    client.move_smooth([1.0, 1.0, 0.5], [0.0, 0.0, 0.5], 0.0, 5.0)
+
+    # landing sequence
+    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+
 
     # Land
     client.stop(1.0)
