@@ -247,38 +247,38 @@ if __name__ == '__main__':
 
 
 
-    # Take off and hover (with zero yaw)
-    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # # Take off and hover (with zero yaw)
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
 
-    # Fly in a square
-    client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 3.0)
-    client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 3.0)
-    client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 3.0)
-    client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 3.0)
+    # # Fly in a square
+    # client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 3.0)
+    # client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 3.0)
+    # client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 3.0)
+    # client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 3.0)
 
-    # Go back to hover (with zero yaw) and prepare to land
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    # # Go back to hover (with zero yaw) and prepare to land
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     
      
 
 
     # Move tests
-    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
-    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    # num_squares = 5
-    # for i in range(num_squares):
-    #     client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 2.0)
-    #     client.move(0.5, 0.0, 0.5, 0.0, 1.0)
-    #     client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 2.0)
-    #     client.move(0.5, 0.5, 0.5, 0.0, 1.0)
-    #     client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 2.0)
-    #     client.move(0.0, 0.5, 0.5, 0.0, 1.0)
-    #     client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
-    #     client.move(0.0, 0.0, 0.5, 0.0, 1.0)
-    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    num_squares = 5
+    for i in range(num_squares):
+        client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 2.0)
+        client.move(0.5, 0.0, 0.5, 0.0, 1.0)
+        client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 2.0)
+        client.move(0.5, 0.5, 0.5, 0.0, 1.0)
+        client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 2.0)
+        client.move(0.0, 0.5, 0.5, 0.0, 1.0)
+        client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
+        client.move(0.0, 0.0, 0.5, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
 
     # Land
     client.stop(1.0)
@@ -287,4 +287,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('flight_test_data.json')
+    client.write_data('five_squares_data.json')
