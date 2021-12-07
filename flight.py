@@ -101,7 +101,7 @@ variables = [
 
 
 class SimpleClient:
-    def __init__(self, uri, use_controller=True, use_observer=False):
+    def __init__(self, uri, use_controller=True, use_observer=True):
         self.init_time = time.time()
         self.use_controller = use_controller
         self.use_observer = use_observer
@@ -235,7 +235,6 @@ if __name__ == '__main__':
     #
     # # For take-off tests
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
-    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
 
 
     # # Hover tests
@@ -264,21 +263,26 @@ if __name__ == '__main__':
      
 
 
-    # Move tests
+    # # Move tests
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # num_squares = 3
+    # for i in range(num_squares):
+    #     client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 2.0)
+    #     client.move(0.5, 0.0, 0.5, 0.0, 1.0)
+    #     client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 2.0)
+    #     client.move(0.5, 0.5, 0.5, 0.0, 1.0)
+    #     client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 2.0)
+    #     client.move(0.0, 0.5, 0.5, 0.0, 1.0)
+    #     client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
+    #     client.move(0.0, 0.0, 0.5, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    num_squares = 5
-    for i in range(num_squares):
-        client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 2.0)
-        client.move(0.5, 0.0, 0.5, 0.0, 1.0)
-        client.move_smooth([0.5, 0.0, 0.5], [0.5, 0.5, 0.5], 0.0, 2.0)
-        client.move(0.5, 0.5, 0.5, 0.0, 1.0)
-        client.move_smooth([0.5, 0.5, 0.5], [0.0, 0.5, 0.5], 0.0, 2.0)
-        client.move(0.0, 0.5, 0.5, 0.0, 1.0)
-        client.move_smooth([0.0, 0.5, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
-        client.move(0.0, 0.0, 0.5, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
+
+    client.move_smooth([0.0, 0.0, 0.5], [0.0, 0.0, 0.5], 0.0, 2.0)
 
     # Land
     client.stop(1.0)
@@ -287,4 +291,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('five_squares_data.json')
+    client.write_data('three_squares_data.json')
