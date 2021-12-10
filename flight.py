@@ -281,19 +281,20 @@ if __name__ == '__main__':
 
     # takeoff sequence
     client.move(0.0, 0.0, 0.15, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.20, 0.0, 1.0)
 
     # movement sequence
-    client.move_smooth([0.0, 0.0, 0.5], [1.0, 1.0, 0.5], 0.0, 5.0)
-    client.move(1.0, 1.0, 0.10, 0.0, 2.0)
-    client.move(1.0, 1.0, 0.10, 0.0, 10.0)
-    client.move(1.0, 1.0, 0.50, 0.0, 2.0)
-    client.move_smooth([1.0, 1.0, 0.5], [0.0, 0.0, 0.5], 0.0, 5.0)
+    client.move_smooth([0.0, 0.0, 0.2], [1.0, -1.0, 0.2], 0.0, 5.0)
+    client.move(1.0, -1.0, -0.30, 0.0, 2.0)
+    client.move(1.0, -1.0, -0.30, 0.0, 5.0)
+    client.move(1.0, -1.0, 0.20, 0.0, 2.0)
+    client.move_smooth([1.0, -1.0, 0.2], [0.0, 0.0, 0.2], 0.0, 5.0)
 
     # landing sequence
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.15, 0.0, 1.0)
-
+    client.move(0.0, 0.0, 0.20, 0.0, 2.0)
+    client.move(0.0, 0.0, 0.00, 0.0, 2.0)
+    client.move(0.0, 0.0, -0.20, 0.0, 2.0)
+    client.move(0.0, 0.0, -0.40, 0.0, 2.0)
 
     # Land
     client.stop(1.0)
@@ -302,4 +303,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('three_squares_data.json')
+    client.write_data('three_gram_pickup_data.json')
