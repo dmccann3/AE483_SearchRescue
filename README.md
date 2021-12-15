@@ -11,13 +11,7 @@ The analysis notebook is the meat of our project. It includes almost all of the 
 This file acts as the drone client. It connects directly to the drone and sends commands on where to move, how quickly to move, how long to remain there, and more. It also controls what data is logged and where that data is stored. While the analysis notebook is important for setting up the autonomous portions of the code, the client is necessary for programming the drone's actual movements.
 
 ## data
-<<<<<<< HEAD
-There are nine files of flight data that we use in our comparisons. They are named using the convention final_testing{i}_{j}gram.json, where i corresponds to the number trial that data represents, and j is the amount of mass in grams that the drone picked up. For example, final_testing2_5gram.json contains the data from the second trial in which the 5g ball of putty was added to the drone mid-flight.
+There are nine files of flight data that we use in our comparisons. They are named using the convention `final_testing{i}_{j}gram.json`, where i corresponds to the number trial that data represents, and j is the amount of mass in grams that the drone picked up. For example, `final_testing2_5gram.json` contains the data from the second trial in which the 5g ball of putty was added to the drone mid-flight. These files contain all the data we chose to log throughout each time step. They start by listing a measurement, say `ae483log.o_x` (which corresponds to the x-coordinate of the drone's position according to our controller/observer). Immediately following this is a list of all the time values this piece of data was recorded, followed then by the data itself. This pattern is repeated for each measurement the client logs.
 
-## videos 
-There are three videos of our quadcopter securing a payload dropped into the cup attached to the top of the quadcopter. 
-=======
-There are nine files of flight data that we use in our comparisons. They are named using the convention `final_testing{i}_{j}gram.json`, where i corresponds to the number trial that data represents, and j is the amount of mass in grams that the drone picked up. For example, `final_testing2_5gram.json` contains the data from the second trial in which the 5g ball of putty was added to the drone mid-flight.
-
-## videos ??
->>>>>>> 6c45394355e936b8987392512d10ea0a75b42d36
+## videos
+The last group of important files in this directory are the videos. We have included three videos that depict one flight test using each sized mass. In these videos you will see the drone lift off and fly to a corner of the room. There it will drop down slightly, simulating the act of landing to retrieve an object from the ground. Instead, the ball of putty is placed in the cup on top and the drone returns to the center position.

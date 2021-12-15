@@ -258,8 +258,6 @@ if __name__ == '__main__':
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     
      
-
-
     # # Move tests
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
@@ -298,4 +296,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('final_testing1_1gram_funky2.json')
+    client.write_data('FILENAME_HERE.json')
