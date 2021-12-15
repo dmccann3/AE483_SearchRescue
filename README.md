@@ -11,7 +11,13 @@ The analysis notebook is the meat of our project. It includes almost all of the 
 This file acts as the drone client. It connects directly to the drone and sends commands on where to move, how quickly to move, how long to remain there, and more. It also controls what data is logged and where that data is stored. While the analysis notebook is important for setting up the autonomous portions of the code, the client is necessary for programming the drone's actual movements.
 
 ## data
+<<<<<<< HEAD
 There are nine files of flight data that we use in our comparisons. They are named using the convention final_testing{i}_{j}gram.json, where i corresponds to the number trial that data represents, and j is the amount of mass in grams that the drone picked up. For example, final_testing2_5gram.json contains the data from the second trial in which the 5g ball of putty was added to the drone mid-flight.
 
 ## videos 
 There are three videos of our quadcopter securing a payload dropped into the cup attached to the top of the quadcopter. 
+=======
+There are nine files of flight data that we use in our comparisons. They are named using the convention `final_testing{i}_{j}gram.json`, where i corresponds to the number trial that data represents, and j is the amount of mass in grams that the drone picked up. For example, `final_testing2_5gram.json` contains the data from the second trial in which the 5g ball of putty was added to the drone mid-flight.
+
+## videos ??
+>>>>>>> 6c45394355e936b8987392512d10ea0a75b42d36
