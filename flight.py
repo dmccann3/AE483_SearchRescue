@@ -44,9 +44,6 @@ variables = [
     'ae483log.o_x_des',
     'ae483log.o_y_des',
     'ae483log.o_z_des',
-    # 'ctrltarget.x',
-    # 'ctrltarget.y',
-    # 'ctrltarget.z',
     # Motor power commands
     'ae483log.m_1',
     'ae483log.m_2',
@@ -221,7 +218,7 @@ if __name__ == '__main__':
     cflib.crtp.init_drivers()
 
     # Create and start the client that will connect to the drone
-    client = SimpleClient(uri, use_controller=True, use_observer=False)   # <-- FIXME
+    client = SimpleClient(uri, use_controller=False, use_observer=True)   # <-- FIXME
     while not client.is_connected:
         print(f' ... connecting ...')
         time.sleep(1.0)
@@ -266,7 +263,7 @@ if __name__ == '__main__':
     # # Move tests
     # client.move(0.0, 0.0, 0.15, 0.0, 1.0)
     # client.move(0.0, 0.0, 0.50, 0.0, 1.0)
-    # num_squares = 3
+    # num_squares = 5
     # for i in range(num_squares):
     #     client.move_smooth([0.0, 0.0, 0.5], [0.5, 0.0, 0.5], 0.0, 2.0)
     #     client.move(0.5, 0.0, 0.5, 0.0, 1.0)
@@ -281,19 +278,18 @@ if __name__ == '__main__':
 
     # takeoff sequence
     client.move(0.0, 0.0, 0.25, 0.0, 1.0)
-    client.move(0.0, 0.0, 0.50, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.50, 0.0, 2.0)
 
     # movement sequence
     client.move_smooth([0.0, 0.0, 0.5], [1.0, -1.0, 0.5], 0.0, 5.0)
-    client.move(1.0, -1.0, 0.70, 0.0, 2.0)
-    client.move(1.0, -1.0, 0.50, 0.0, 5.0)
-    client.move(1.0, -1.0, 0.70, 0.0, 2.0)
+    client.move(1.0, -1.0, 0.50, 0.0, 2.0)
+    client.move(1.0, -1.0, 0.25, 0.0, 5.0)
+    client.move(1.0, -1.0, 0.50, 0.0, 2.0)
     client.move_smooth([1.0, -1.0, 0.5], [0.0, 0.0, 0.5], 0.0, 5.0)
 
     # landing sequence
     client.move(0.0, 0.0, 0.50, 0.0, 2.0)
-    client.move(0.0, 0.0, 0.250, 0.0, 2.0)
-    client.move(0.0, 0.0, 0.10, 0.0, 1.0)
+    client.move(0.0, 0.0, 0.20, 0.0, 2.0)
 
     # Land
     client.stop(1.0)
@@ -302,4 +298,4 @@ if __name__ == '__main__':
     client.disconnect()
 
     # Write data from flight
-    client.write_data('final_testing_5gram.json')
+    client.write_data('final_testing1_1gram_funky2.json')
